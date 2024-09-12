@@ -46,18 +46,32 @@ Error generating stack: `+s.message+`
   width: 100%;
   z-index: 1000;
   background-color: transparent;
+
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+  }
 `,lz=Tt.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `,cz=Tt.div`
     display: flex;
     align-items: center;
     gap: 50px;
+    @media only screen and (max-width: 768px) {
+        padding: 15px;
+    }
 `,uz=Tt.img`
     height: 90px;
+    @media only screen and (max-width: 768px) {
+        display: none;
+  }
 `,hz=Tt.ul`
     display: flex;
     gap: 20px;
@@ -4177,23 +4191,48 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `,MY=Tt.div`
-  height: 100vh;
+  height: 100%;
   scroll-snap-align: center;
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 `,wY=Tt.div`
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+  }
 `,EY=Tt(OV.h1)`
   font-size: 120px;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 74px;
+  }
 `,CY=Tt.div`
   flex: 3;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+  }
   
 `,TY=Tt.img`
   width: 500px;
@@ -4207,6 +4246,10 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   margin: auto;
   animation: animate 2s infinite ease alternate;
   padding-bottom: 10%;
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
   @keyframes animate {
     to{
       transform: translateY(20px);
@@ -4227,6 +4270,10 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
 `,IY=Tt.div`
   flex: 1;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `,BY=Tt.div`
   flex: 1;
   display: flex;
@@ -4237,6 +4284,12 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   animation: scrolls linear;
   animation-timeline: view();
   animation-range: entry 0;
+
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+  }
 
   @keyframes scrolls {
     from {
@@ -4249,6 +4302,10 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   }
 `,DY=Tt.h1`
   font-size: 74px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 60px;
+  }
 `,LY=Tt.div`
   display: flex;
   align-items: center;
@@ -4293,10 +4350,21 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   display: flex;
   justify-content: space-between;
   width: 1400px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `,XY=Tt.div`
   flex: 1;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+  }
 `,JY=Tt.ul`
   list-style: none;
   display: flex;
@@ -4305,6 +4373,7 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   animation: scrolls linear;
   animation-timeline: view();
   animation-range: entry 0;
+
 
   @keyframes scrolls {
     from {
@@ -4315,6 +4384,7 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
       scale: 1;
     }
   }  animation: scrolls linear;
+  
   animation-timeline: view();
   animation-range: entry 0;
 
@@ -4335,6 +4405,13 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   -webkit-text-stroke: 1px lightblue;
   position: relative;
 
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+    color: lightblue;
+    -webkit-text-stroke: 0px;
+    animation: none;
+  }
+
   &::after {
     content: "${n=>n.text}";
     position: absolute;
@@ -4348,7 +4425,12 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
 
   &:hover {
     &::after {
+      
       animation: moveText 0.5s linear both;
+
+      @media only screen and (max-width: 768px) {
+        animation: none;
+      }
       @keyframes moveText {
         to{
           width: 100%;
@@ -4360,6 +4442,11 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
 `,YY=Tt.div`
   padding: 5px;
   margin-bottom: 2px;
@@ -4374,6 +4461,10 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
 `,QY=Tt.div`
   flex: 1;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `,qY=Tt.img`
   width: 600px;
   height: 600px;
@@ -4385,6 +4476,7 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   right: 0;
   margin: auto;
   padding-bottom: 10%;
+  
 `,$Y=()=>{const[n,e]=J.useState(null),t=i=>{e(i===n?null:i)};return ze(VY,{children:$n(WY,{children:[ze(XY,{children:ze(JY,{children:HY.map((i,r)=>$n("div",{children:[ze(jY,{onClick:()=>t(r),text:i,children:i}),n===r&&$n(KY,{children:[ze(YY,{children:GY[r]}),ze(ZY,{href:ef[r],target:ef[r].includes("/downloads/")?"_self":"_blank",rel:ef[r].includes("/downloads/")?"":"noopener noreferrer",download:!!ef[r].includes("/downloads/"),children:ef[r].includes("/downloads/")?"Download":"View Project"})]})]},r))})}),ze(QY,{children:ze(qY,{src:"./img/coding.png"})})]})})};class Yd{constructor(e=0,t="Network Error"){this.status=e,this.text=t}}const eZ=()=>{if(!(typeof localStorage>"u"))return{get:n=>Promise.resolve(localStorage.getItem(n)),set:(n,e)=>Promise.resolve(localStorage.setItem(n,e)),remove:n=>Promise.resolve(localStorage.removeItem(n))}},_i={origin:"https://api.emailjs.com",blockHeadless:!1,storageProvider:eZ()},gw=n=>n?typeof n=="string"?{publicKey:n}:n.toString()==="[object Object]"?n:{}:{},tZ=(n,e="https://api.emailjs.com")=>{if(!n)return;const t=gw(n);_i.publicKey=t.publicKey,_i.blockHeadless=t.blockHeadless,_i.storageProvider=t.storageProvider,_i.blockList=t.blockList,_i.limitRate=t.limitRate,_i.origin=t.origin||e},O3=async(n,e,t={})=>{const i=await fetch(_i.origin+n,{method:"POST",headers:t,body:e}),r=await i.text(),s=new Yd(i.status,r);if(i.ok)return s;throw s},k3=(n,e,t)=>{if(!n||typeof n!="string")throw"The public key is required. Visit https://dashboard.emailjs.com/admin/account";if(!e||typeof e!="string")throw"The service ID is required. Visit https://dashboard.emailjs.com/admin";if(!t||typeof t!="string")throw"The template ID is required. Visit https://dashboard.emailjs.com/admin/templates"},nZ=n=>{if(n&&n.toString()!=="[object Object]")throw"The template params have to be the object. Visit https://www.emailjs.com/docs/sdk/send/"},z3=n=>n.webdriver||!n.languages||n.languages.length===0,H3=()=>new Yd(451,"Unavailable For Headless Browser"),iZ=(n,e)=>{if(!Array.isArray(n))throw"The BlockList list has to be an array";if(typeof e!="string")throw"The BlockList watchVariable has to be a string"},rZ=n=>{var e;return!((e=n.list)!=null&&e.length)||!n.watchVariable},sZ=(n,e)=>n instanceof FormData?n.get(e):n[e],G3=(n,e)=>{if(rZ(n))return!1;iZ(n.list,n.watchVariable);const t=sZ(e,n.watchVariable);return typeof t!="string"?!1:n.list.includes(t)},V3=()=>new Yd(403,"Forbidden"),oZ=(n,e)=>{if(typeof n!="number"||n<0)throw"The LimitRate throttle has to be a positive number";if(e&&typeof e!="string")throw"The LimitRate ID has to be a non-empty string"},aZ=async(n,e,t)=>{const i=Number(await t.get(n)||0);return e-Date.now()+i},W3=async(n,e,t)=>{if(!e.throttle||!t)return!1;oZ(e.throttle,e.id);const i=e.id||n;return await aZ(i,e.throttle,t)>0?!0:(await t.set(i,Date.now().toString()),!1)},X3=()=>new Yd(429,"Too Many Requests"),lZ=async(n,e,t,i)=>{const r=gw(i),s=r.publicKey||_i.publicKey,o=r.blockHeadless||_i.blockHeadless,a=r.storageProvider||_i.storageProvider,l={..._i.blockList,...r.blockList},c={..._i.limitRate,...r.limitRate};return o&&z3(navigator)?Promise.reject(H3()):(k3(s,n,e),nZ(t),t&&G3(l,t)?Promise.reject(V3()):await W3(location.pathname,c,a)?Promise.reject(X3()):O3("/api/v1.0/email/send",JSON.stringify({lib_version:"4.4.1",user_id:s,service_id:n,template_id:e,template_params:t}),{"Content-type":"application/json"}))},cZ=n=>{if(!n||n.nodeName!=="FORM")throw"The 3rd parameter is expected to be the HTML form element or the style selector of the form"},uZ=n=>typeof n=="string"?document.querySelector(n):n,hZ=async(n,e,t,i)=>{const r=gw(i),s=r.publicKey||_i.publicKey,o=r.blockHeadless||_i.blockHeadless,a=_i.storageProvider||r.storageProvider,l={..._i.blockList,...r.blockList},c={..._i.limitRate,...r.limitRate};if(o&&z3(navigator))return Promise.reject(H3());const f=uZ(t);k3(s,n,e),cZ(f);const d=new FormData(f);return G3(l,d)?Promise.reject(V3()):await W3(location.pathname,c,a)?Promise.reject(X3()):(d.append("lib_version","4.4.1"),d.append("service_id",n),d.append("template_id",e),d.append("user_id",s),O3("/api/v1.0/email/send-form",d))},fZ={init:tZ,send:lZ,sendForm:hZ,EmailJSResponseStatus:Yd};function dZ(n){const e=Hl.useRef(),{nodes:t,materials:i,animations:r}=Kd("medieval-transformed.glb");return NK(r,e),ze("group",{ref:e,...n,dispose:null,children:$n("group",{name:"Sketchfab_Scene",children:[ze("group",{name:"RootNode",position:[141.142,8.179,116.793],rotation:[0,-1.226,0],children:$n("group",{name:"Fireflies",position:[-213.266,283.376,961.155],rotation:[-Math.PI/2,0,0],scale:2.804,children:[ze("mesh",{name:"1",geometry:t[1].geometry,material:i.PaletteMaterial001,morphTargetDictionary:t[1].morphTargetDictionary,morphTargetInfluences:t[1].morphTargetInfluences}),ze("mesh",{name:"0",geometry:t[0].geometry,material:i.PaletteMaterial001,morphTargetDictionary:t[0].morphTargetDictionary,morphTargetInfluences:t[0].morphTargetInfluences})]})}),ze("mesh",{name:"Barrel_bottom003_Wood1_0",geometry:t.Barrel_bottom003_Wood1_0.geometry,material:i.PaletteMaterial001,position:[633.539,87.46,268.24],rotation:[-Math.PI/2,0,-1.226],scale:[49.471,49.471,67.575]}),ze("mesh",{name:"Plane082_Untitled_drawing_0",geometry:t.Plane082_Untitled_drawing_0.geometry,material:i.Untitled_drawing,position:[1391.562,160.358,16.844],rotation:[-.008,.359,-1.466],scale:[30.76,120.815,104.551]}),ze("mesh",{name:"flower_small_flower_small_0",geometry:t.flower_small_flower_small_0.geometry,material:i.flower_small,position:[642.112,24.975,1186.183],rotation:[-.241,.291,-.071],scale:34.368}),ze("mesh",{name:"Flags001_Flag_blue_0",geometry:t.Flags001_Flag_blue_0.geometry,material:i.PaletteMaterial002,position:[658.134,588.29,662.102],rotation:[-.083,-.066,-.907],scale:[513.441,3.347,92.668]})]})})}Kd.preload("/medieval-transformed.glb");const pZ=()=>$n(aw,{children:[ze(AY,{environment:"city",intensity:.6,children:ze(dZ,{scale:[2,2,2]})}),ze(b3,{enableZoom:!1,autoRotate:!0,autoRotateSpeed:2})]}),mZ=Tt.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -4404,6 +4496,10 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   animation-timeline: view();
   animation-range: entry 0;
 
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
+
   @keyframes scrolls {
     from {
       opacity: 0;
@@ -4421,6 +4517,9 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   flex-direction: column;
   gap: 25px;
   
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  }
 `,FP=Tt.input`
   padding: 20px;
   background-color: white;
@@ -4450,6 +4549,9 @@ vec3 texelOld = texture2D(previousShadowMap, vUv).rgb;
   animation: ${SZ} 1s linear infinite;
 `,wZ=Tt.div`
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;Tt.iframe`
   width: 300px;
   height: auto;
